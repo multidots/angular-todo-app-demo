@@ -1,0 +1,62 @@
+.todo-page {
+    margin-top: 50px;
+    box-shadow: 1px 1px 1px 2px lightgrey;
+}
+.todo-page h2 {
+    text-align: center;
+    padding-bottom: 30px;
+}
+.form {
+    width: 500px;
+    margin: 0 auto 30px;
+}
+.error {
+    color: red;
+    padding-top: 5px;
+}
+.input-task {
+    width: 100%;
+    padding: 10px;
+}
+.submit-btn {
+    padding: 10px 30px;
+    background: #12a512;
+    border: 0;
+    color: #fff;
+}
+.todo-list {
+    width: 500px;
+    margin: 0 auto;
+}
+.todo-list .row {
+    border-bottom: 1px solid lightgray;
+    padding: 15px 0;
+}
+.no-padding {
+    padding-left: 0;
+}
+.text {
+    font-size: 18px;
+}
+.btn-div {
+    text-align: right;
+}
+.select-all-container {
+    width: 530px;
+    margin: 0 auto;
+    padding-top: 20px;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 20px;
+}
+.select-all-container .select-all-checkbox {
+    padding: 15px 0;
+} 
+.del-btn {
+    padding: 5px 20px;
+    background: #ea4646;
+    border: 0;
+    color: #fff;
+}
+.todo-list:last-child {
+    margin-bottom: 30px;
+}

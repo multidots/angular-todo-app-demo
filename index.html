@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app>
+
+<head>
+    <title>Angular 1.X Todo App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+    <link rel="stylesheet" type="text/css" href="css/style.css"></link>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="js/todoController.js"></script>
+</head>
+
+<body>
+    <div ng-controller="TodoController">
+        <div class="container todo-page">
+            <h2>To-Do List</h2>
+            <form class="form" name="toDoForm" ng-submit="toDoForm.$valid && addTask()" novalidate>
+                <div class="row">
+                    <div class="col-md-8">
+                        <input class="input-task" type="text" name="taskName" ng-model="taskName" placeholder="Task Name Here" required />
+                        <span class="error" ng-show="toDoForm.taskName.$invalid && submitted">Task Name is Required.</span>
+                    </div>
+                    <div class="col-md-4 btn-div">
+                        <button class="submit-btn" type="submit" ng-click="submitted = true;">Add</button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="select-all-container" ng-show="todoLists.length > 0">
+                <div class="row select-all-checkbox">
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <input type="checkbox" name="selectall" ng-model="selectall" ng-change="selectallchange()">
+                            </div>
+                            <div class="col-md-9">
+                                <span class="text">
+                                    <b>Select All</b>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 btn-div">
+                        <button class="del-btn" type="type" ng-click="deleteTask()">Delete</button>
+                    </div>
+                </div>
+            </div>
+            <div class="todo-list" ng-repeat="todoList in todoLists">
+                <div class="row">
+                    <div class="col-md-2 no-padding">
+                        <input type="checkbox" ng-model="todoList.isChecked" ng-change="changeCheckBox()" />
+                    </div>
+                    <div class="col-md-10 text">
+                        <span>{{todoList.text}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
